@@ -16,7 +16,7 @@ export const NavBar = () => {
       <NavList>
         {pages &&
           pages.map(({ text, href }) => (
-            <NavItem key={text} href={href}>
+            <NavItem key={text} href={`/${href}`}>
               {text}
             </NavItem>
           ))}
