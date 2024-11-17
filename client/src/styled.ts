@@ -22,6 +22,8 @@ export const GlobalStyle = css`
 
   #root {
     font-family: "Arial", sans-serif;
+    color: #fff;
+    line-height: 120%;
   }
 
   a {
