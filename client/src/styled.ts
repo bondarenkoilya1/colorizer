@@ -4,8 +4,11 @@ import { css } from "@emotion/react";
 
 import styled from "@emotion/styled";
 
+import { connectFonts } from "./fonts";
+
 export const GlobalStyle = css`
   ${emotionReset}
+  ${connectFonts}
 
   html {
     box-sizing: border-box;
@@ -21,7 +24,7 @@ export const GlobalStyle = css`
   }
 
   #root {
-    font-family: "Arial", sans-serif;
+    font-family: "Ro", sans-serif;
     color: #fff;
     line-height: 120%;
   }

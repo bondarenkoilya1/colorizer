@@ -1,10 +1,13 @@
-import { ContainerStyled } from "../../styled.ts";
+import { ContainerStyled } from "../../styled";
 import { NavBar } from "../ui";
+import { HeaderStyled } from "./styled";
 
 export const Header = () => {
   return (
     <ContainerStyled>
-      <NavBar />
+      <HeaderStyled>
+        <NavBar />
+      </HeaderStyled>
     </ContainerStyled>
   );
 };
