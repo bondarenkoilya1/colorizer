@@ -11,5 +11,6 @@ export const NavItemStyled = styled.li`
 `;
 
 export const NavLinkStyles = css`
-  font-size: 32px;
+  font-size: 26px;
+  text-transform: uppercase;
 `;
