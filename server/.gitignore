@@ -1,0 +1,7 @@
+# Application model
+/model/colorization_deploy_v2.prototxt
+/model/colorization_release_v2.caffemodel
+/model/pts_in_hull.npy
+
+.venv/
+/.env
