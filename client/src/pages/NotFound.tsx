@@ -1,4 +1,4 @@
-import { Error } from "../components/ui";
+import { Error } from "../components";
 
 export const NotFound = () => {
   return <Error errorCode="404" />;
