@@ -1,5 +1,5 @@
 import { Logo } from "../../Logo";
-import { pages } from "../../../../constants";
+import { PAGES } from "../../../../constants";
 import { NavList } from "../NavList";
 import { NavItem } from "../NavItem";
 import { LogoStyles, NavBarStyled } from "./styled";
@@ -14,8 +14,8 @@ export const NavBar = () => {
       <LogoStyled href="/" />
 
       <NavList>
-        {pages &&
-          pages.map(({ text, href }) => (
+        {PAGES &&
+          PAGES.map(({ text, href }) => (
             <NavItem key={text} href={`/${href}`}>
               {text}
             </NavItem>
