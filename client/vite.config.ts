@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 import react from "@vitejs/plugin-react";
 
@@ -10,6 +11,7 @@ export default defineConfig({
     svgr({
       svgrOptions: { exportType: "default", ref: true, svgo: false, titleProp: true },
       include: "**/*.svg"
-    })
+    }),
+    tsconfigPaths()
   ]
 });

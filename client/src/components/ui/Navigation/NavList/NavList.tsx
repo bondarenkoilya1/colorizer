@@ -1,4 +1,4 @@
-import { ChildrenType } from "../../../../types";
+import { ChildrenType } from "@types";
 import { FC } from "react";
 import { NavListStyled } from "./styled";
 

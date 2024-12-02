@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Main, NotFound } from "../pages";
+import { Main, NotFound } from "@pages";
 
 export const Layout = () => (
   <Routes>

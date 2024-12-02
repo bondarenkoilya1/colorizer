@@ -21,7 +21,22 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Path aliases */
+    "baseUrl": "./",
+    "paths": {
+      "@App": ["src/App.tsx"],
+      "@styled": ["src/styled.ts"],
+      "@assets/*": ["src/assets/*"],
+      "@components": ["src/components/index.ts"],
+      "@config": ["src/config/index.ts"],
+      "@constants": ["src/constants/index.ts"],
+      "@layout": ["src/layout/index.ts"],
+      "@pages": ["src/pages/index.ts"],
+      "@types": ["src/types/index.ts"],
+      "@utils": ["src/utils/index.ts"]
+    }
   },
   "include": ["src"]
 }

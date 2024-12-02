@@ -1,7 +1,7 @@
-import { Layout } from "./layout";
-import { Header, Providers } from "./components";
+import { Layout } from "@layout";
+import { Header, Providers } from "@components";
 import { Global } from "@emotion/react";
-import { GlobalStyle } from "./styled";
+import { GlobalStyle } from "@styled";
 
 export const App = () => {
   return (

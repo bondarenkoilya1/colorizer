@@ -1,5 +1,5 @@
 import { Logo } from "../../Logo";
-import { PAGES } from "../../../../constants";
+import { PAGES } from "@constants";
 import { NavList } from "../NavList";
 import { NavItem } from "../NavItem";
 import { LogoStyles, NavBarStyled } from "./styled";
