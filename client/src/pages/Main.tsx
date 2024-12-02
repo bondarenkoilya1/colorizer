@@ -1,7 +1,7 @@
 // import { ImageCompareSlider } from "../components";
 // import { REPRESENTATIVE_IMAGE } from "../constants";
-import { ContainerStyled } from "../styled";
-import { FileUploader } from "../components";
+import { ContainerStyled } from "@styled";
+import { FileUploader } from "@components";
 
 export const Main = () => {
   return (

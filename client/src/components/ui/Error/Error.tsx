@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ErrorProps } from "../../../types";
+import { ErrorProps } from "@types";
 import {
   ErrorContainerStyled,
   ErrorTitleStyled,

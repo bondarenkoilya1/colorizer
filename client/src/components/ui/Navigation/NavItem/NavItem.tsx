@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FC } from "react";
-import { NavItemProps } from "../../../../types";
+import { NavItemProps } from "@types";
 import { NavItemStyled, NavLinkStyles } from "./styled";
 import styled from "@emotion/styled";
 

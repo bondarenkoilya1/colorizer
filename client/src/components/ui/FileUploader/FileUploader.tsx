@@ -1,9 +1,9 @@
 import { ChangeEvent, useState } from "react";
-import { UploadStatus } from "../../../types";
+import { UploadStatus } from "@types";
 import axios from "axios";
 import { GrUpload as UploadIcon } from "react-icons/gr";
-import { convertBytesToMegaBytes } from "../../../utils";
-import { API_URL } from "../../../config";
+import { convertBytesToMegaBytes } from "@utils";
+import { API_URL } from "@config";
 
 export const FileUploader = () => {
   const [file, setFile] = useState<File | null>(null);

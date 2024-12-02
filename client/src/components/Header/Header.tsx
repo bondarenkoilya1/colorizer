@@ -1,4 +1,4 @@
-import { ContainerStyled } from "../../styled";
+import { ContainerStyled } from "@styled";
 import { NavBar } from "../ui";
 import { HeaderStyled } from "./styled";
 
