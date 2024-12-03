@@ -35,7 +35,8 @@
       "@layout": ["src/layout/index.ts"],
       "@pages": ["src/pages/index.ts"],
       "@types": ["src/types/index.ts"],
-      "@utils": ["src/utils/index.ts"]
+      "@utils": ["src/utils/index.ts"],
+      "@data": ["src/data/index.ts"]
     }
   },
   "include": ["src"]
