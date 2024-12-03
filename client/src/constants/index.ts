@@ -1,3 +1,6 @@
-export * from "./imageCompareSliders";
-export * from "./pages";
-export * from "./fileUploader";
+export const BYTES_IN_ONE_MEGABYTE = 2 ** 20;
+
+export const PAGES = [
+  { text: "Gallery", href: "gallery" },
+  { text: "Contacts", href: "contacts" }
+];

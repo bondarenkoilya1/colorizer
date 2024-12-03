@@ -1,5 +1,5 @@
-// import { ImageCompareSlider } from "../components";
-// import { REPRESENTATIVE_IMAGE } from "../constants";
+// import { ImageCompareSlider } from "@components";
+// import { representativeImages } from "@data";
 import { ContainerStyled } from "@styled";
 import { FileUploader } from "@components";
 
@@ -11,7 +11,7 @@ export const Main = () => {
       {/*    width: "30%",*/}
       {/*    marginLeft: "auto"*/}
       {/*  }}>*/}
-      {/*  <ImageCompareSlider image={REPRESENTATIVE_IMAGE} />*/}
+      {/*  <ImageCompareSlider image={representativeImages} />*/}
       {/*</div>*/}
       <FileUploader />
     </ContainerStyled>
