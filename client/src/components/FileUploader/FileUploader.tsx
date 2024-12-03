@@ -2,14 +2,16 @@ import { ChangeEvent, useState } from "react";
 import { UploadStatus } from "@types";
 import axios from "axios";
 import { GrUpload as UploadIcon } from "react-icons/gr";
-import { convertBytesToMegaBytes } from "@utils";
 import { API_URL } from "@config";
 import {
+  AdditionalTextStyled,
+  ErrorMessageStyled,
   InputButtonStyled,
   InputTextStyled,
   InputUploadLabelStyled,
   InputUploadStyled
-} from "./styled.ts";
+} from "./styled";
+// import { convertBytesToMegaBytes } from "@utils";
 
 const headers = {
   "Content-Type": "multipart/form-data"
@@ -19,7 +21,6 @@ export const FileUploader = () => {
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<UploadStatus>("idle");
   const [colorizedImage, setColorizedImage] = useState<string | null>(null);
-
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setFile(e.target.files[0]);
@@ -43,42 +44,71 @@ export const FileUploader = () => {
       setStatus("success");
     } catch (error) {
       setStatus("error");
-      console.error("Upload failed:", error);
+      console.error("Upload failed: ", error);
     }
   };
 
   return (
     <>
-      <InputUploadLabelStyled htmlFor="input-upload">
-        <InputTextStyled>Click and upload!</InputTextStyled>
-        <InputButtonStyled>
-          <UploadIcon size={20} color={"#000"} />
-        </InputButtonStyled>
-      </InputUploadLabelStyled>
-      <InputUploadStyled
-        id="input-upload"
-        type="file"
-        accept="image/png, image/jpeg"
-        onChange={handleFileChange}
-      />
-      {file && (
-        <>
-          <p>File name: {file.name}</p>
-          <p>File type: {file.type.slice(6)} </p>
-          <p>File size: {convertBytesToMegaBytes(file.size)} MB</p>
-        </>
+      <div style={{ display: "flex" }}>
+        <InputUploadLabelStyled htmlFor="input-upload">
+          <InputTextStyled>Click and upload!</InputTextStyled>
+          <InputButtonStyled>
+            <UploadIcon size={20} color={"#000"} />
+          </InputButtonStyled>
+        </InputUploadLabelStyled>
+        <InputUploadStyled
+          id="input-upload"
+          type="file"
+          accept="image/png, image/jpeg"
+          onChange={handleFileChange}
+        />
+        {/* TODO: Add parameter "disabled" to button component and set disabled={status === "uploading"} */}
+        {file && status !== "uploading" && (
+          <button
+            onClick={handleFileUpload}
+            style={{
+              marginLeft: " 20px",
+              width: "300px",
+              borderRadius: "12px",
+              fontSize: "24px",
+              cursor: "pointer"
+            }}>
+            Colorize
+          </button>
+        )}
+      </div>
+
+      <AdditionalTextStyled>* Less than 2MB. Support .jpg, .jpeg or .png</AdditionalTextStyled>
+
+      {/* TODO: Show later as a tooltip for image */}
+      {/*{file && (*/}
+      {/*  <ul>*/}
+      {/*    <li>File name: {file.name}</li>*/}
+      {/*    <li>File format: {file.type.slice(6)} </li>*/}
+      {/*    <li>File size: {convertBytesToMegaBytes(file.size)} MB</li>*/}
+      {/*  </ul>*/}
+      {/*)}*/}
+
+      {status === "error" && (
+        <ErrorMessageStyled>
+          File wasn't uploaded. Check restrictions and try again.
+        </ErrorMessageStyled>
       )}
-      {file && status !== "uploading" && <button onClick={handleFileUpload}>Upload</button>}
-      {status === "success" && <p>File uploaded successfully</p>}
-      {status === "error" && <p>File wasn't uploaded. Try again</p>}
 
       {colorizedImage && (
-        <div>
-          <h3>Colorized Image:</h3>
+        <div style={{ marginTop: "20px" }}>
+          <h3 style={{ fontSize: "24px", marginBottom: "30px" }}>Your image:</h3>
           <img
             src={colorizedImage}
             alt="Colorized image"
-            style={{ width: "400px", height: "400px" }}
+            style={{
+              width: "400px",
+              height: "400px",
+              outline: "3px dashed #fff",
+              outlineOffset: "10px",
+              marginLeft: "10px"
+            }}
           />
         </div>
       )}
