@@ -94,6 +94,10 @@ def colorize():
         filename = secure_filename(image_file.filename)
         image_data = image_file.read()
 
+        # Check file size limit (2MB = 2 * 2**20 bytes)
+        if len(image_data) > 2* 2**20:
+            return "File size exceeds the 2MB limit.", 400
+
         # Process the image
         net = load_model()
         original_image, lab_image, L_channel = preprocess_image(image_data)

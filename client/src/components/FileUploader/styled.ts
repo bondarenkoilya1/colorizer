@@ -50,3 +50,15 @@ export const InputButtonStyled = styled.div`
   border-radius: 6px 0 0 6px;
   transition: all 0.3s ease-in-out;
 `;
+
+export const AdditionalTextStyled = styled.p`
+  font-size: 18px;
+  color: #ecdfcc;
+  margin-top: 10px;
+`;
+
+export const ErrorMessageStyled = styled.p`
+  font-size: 22px;
+  color: #cd1818;
+  margin-top: 16px;
+`;
