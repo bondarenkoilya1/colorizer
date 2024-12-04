@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+
 import styled from "@emotion/styled";
 
 export const InputUploadStyled = styled.input`
@@ -61,4 +63,11 @@ export const ErrorMessageStyled = styled.p`
   font-size: 22px;
   color: #cd1818;
   margin-top: 16px;
+`;
+
+export const ButtonProcessStyles = css`
+  margin-left: 20px;
+  width: 300px;
+  border-radius: 12px;
+  font-size: 26px;
 `;
