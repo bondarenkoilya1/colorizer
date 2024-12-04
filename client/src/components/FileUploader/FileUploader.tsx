@@ -9,9 +9,14 @@ import {
   InputButtonStyled,
   InputTextStyled,
   InputUploadLabelStyled,
-  InputUploadStyled
+  InputUploadStyled,
+  ButtonProcessStyles
 } from "./styled";
+import { Button } from "../ui";
+import styled from "@emotion/styled";
 // import { convertBytesToMegaBytes } from "@utils";
+
+const ButtonProcessStyled = styled(Button)(ButtonProcessStyles);
 
 const headers = {
   "Content-Type": "multipart/form-data"
@@ -64,19 +69,9 @@ export const FileUploader = () => {
           onChange={handleFileChange}
         />
         {/* TODO: Add parameter "disabled" to button component and set disabled={status === "uploading"} */}
-        {file && status !== "uploading" && (
-          <button
-            onClick={handleFileUpload}
-            style={{
-              marginLeft: " 20px",
-              width: "300px",
-              borderRadius: "12px",
-              fontSize: "24px",
-              cursor: "pointer"
-            }}>
-            Colorize
-          </button>
-        )}
+        <ButtonProcessStyled onClick={handleFileUpload} variant="secondary">
+          Colorize
+        </ButtonProcessStyled>
       </div>
 
       <AdditionalTextStyled>* Less than 2MB. Support .jpg, .jpeg or .png</AdditionalTextStyled>
