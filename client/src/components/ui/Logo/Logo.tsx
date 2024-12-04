@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { LogoProps } from "../../../types";
+import { LogoProps } from "@types";
 import { Link } from "react-router-dom";
 
 export const Logo: FC<LogoProps> = ({
