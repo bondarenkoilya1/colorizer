@@ -2,6 +2,7 @@ import { FC } from "react";
 import { LogoProps } from "@types";
 import { Link } from "react-router-dom";
 
+// ClassName is here, so I can apply emotion styles for this component outside the file
 export const Logo: FC<LogoProps> = ({
   href,
   titleColor = "#fff",
@@ -9,7 +10,6 @@ export const Logo: FC<LogoProps> = ({
   className
 }) => {
   return (
-    // ClassName is here, so I can apply emotion styles for this component outside the file
     <Link to={href} className={className}>
       <svg
         width="234"

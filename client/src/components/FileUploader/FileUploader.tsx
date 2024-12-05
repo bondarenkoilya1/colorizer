@@ -5,18 +5,19 @@ import { GrUpload as UploadIcon } from "react-icons/gr";
 import { API_URL } from "@config";
 import {
   AdditionalTextStyled,
-  ErrorMessageStyled,
   InputButtonStyled,
   InputTextStyled,
   InputUploadLabelStyled,
   InputUploadStyled,
-  ButtonProcessStyles
+  ButtonProcessStyles,
+  ErrorBlockStyles
 } from "./styled";
-import { Button } from "../ui";
+import { Button, Error } from "../ui";
 import styled from "@emotion/styled";
 // import { convertBytesToMegaBytes } from "@utils";
 
 const ButtonProcessStyled = styled(Button)(ButtonProcessStyles);
+const ErrorBlockStyled = styled(Error)(ErrorBlockStyles);
 
 const headers = {
   "Content-Type": "multipart/form-data"
@@ -26,6 +27,7 @@ export const FileUploader = () => {
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<UploadStatus>("idle");
   const [colorizedImage, setColorizedImage] = useState<string | null>(null);
+
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setFile(e.target.files[0]);
@@ -68,8 +70,10 @@ export const FileUploader = () => {
           accept="image/png, image/jpeg"
           onChange={handleFileChange}
         />
-        {/* TODO: Add parameter "disabled" to button component and set disabled={status === "uploading"} */}
-        <ButtonProcessStyled onClick={handleFileUpload} variant="secondary">
+        <ButtonProcessStyled
+          onClick={handleFileUpload}
+          variant="secondary"
+          disabled={status === "uploading"}>
           Colorize
         </ButtonProcessStyled>
       </div>
@@ -86,9 +90,10 @@ export const FileUploader = () => {
       {/*)}*/}
 
       {status === "error" && (
-        <ErrorMessageStyled>
-          File wasn't uploaded. Check restrictions and try again.
-        </ErrorMessageStyled>
+        <ErrorBlockStyled
+          iconSize={24}
+          unspecifiedErrorMessage="File wasn't uploaded. Check restrictions and try again."
+        />
       )}
 
       {colorizedImage && (

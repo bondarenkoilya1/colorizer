@@ -34,3 +34,14 @@ export const ErrorSupportMessageStyled = styled.p`
 export const TransferLinkStyles = css`
   color: #ecdfcc;
 `;
+
+export const UnspecifiedErrorBlockStyled = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const UnspecifiedErrorMessageStyled = styled.p`
+  font-size: 22px;
+  color: #cd1818;
+  margin-left: 10px;
+`;
