@@ -16,7 +16,7 @@ export const InputUploadLabelStyled = styled.label`
   cursor: pointer;
   width: fit-content;
   border: 3px solid #fff;
-  padding-left: 20px;
+  padding-left: 60px;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
 
@@ -38,7 +38,7 @@ export const InputUploadLabelStyled = styled.label`
 
 export const InputTextStyled = styled.p`
   font-size: 24px;
-  margin-right: 30px;
+  margin-right: 60px;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
 `;
@@ -49,7 +49,7 @@ export const InputButtonStyled = styled.div`
   align-items: center;
   justify-content: center;
   padding: 30px;
-  border-radius: 6px 0 0 6px;
+  border-radius: 6px;
   transition: all 0.3s ease-in-out;
 `;
 
@@ -67,7 +67,6 @@ export const ErrorMessageStyled = styled.p`
 
 export const ButtonProcessStyles = css`
   margin-left: 20px;
-  width: 300px;
-  border-radius: 12px;
+  width: 260px;
   font-size: 26px;
 `;
