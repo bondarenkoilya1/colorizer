@@ -2,7 +2,6 @@ import { FC } from "react";
 import { ButtonProps } from "@types";
 import { ButtonStyled } from "./styled.ts";
 
-// TODO: Create three variants of button
 // ClassName is here, so I can apply emotion styles for this component outside the file
 export const Button: FC<ButtonProps> = ({
   variant,
