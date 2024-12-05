@@ -59,9 +59,7 @@ export const AdditionalTextStyled = styled.p`
   margin-top: 10px;
 `;
 
-export const ErrorMessageStyled = styled.p`
-  font-size: 22px;
-  color: #cd1818;
+export const ErrorBlockStyles = css`
   margin-top: 16px;
 `;
 
