@@ -14,11 +14,18 @@ export const ButtonStyled = styled.button<ButtonVariants>`
   transition: all 0.3s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: 2px;
+  user-select: none;
 
   &:focus,
   &:hover,
   &:active {
     transition: all 0.3s ease-in-out;
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
   }
 
   ${({ variant }) =>
@@ -27,15 +34,15 @@ export const ButtonStyled = styled.button<ButtonVariants>`
       background-color: #fff;
       color: #000;
 
-      &:focus-visible {
+      &:focus-visible:enabled {
         outline-color: #697565;
       }
       
-      &:hover {
+      &:hover:enabled {
         background-color: #d6c6ae;
       }
       
-      &:active {
+      &:active:enabled {
         background-color: #ac9d88;
       }
     `}
@@ -49,16 +56,16 @@ export const ButtonStyled = styled.button<ButtonVariants>`
       outline: none;
       outline-offset: 0px;
       
-      &:focus-visible {
+      &:focus-visible:enabled {
         border-color: #697565;
       }
       
-      &:hover {
+      &:hover:enabled {
         background-color: #fff;
         color: #000;
       }
       
-      &:active {
+      &:active:enabled {
         background-color: #d6c6ae;
       }
     `} 
@@ -75,15 +82,15 @@ export const ButtonStyled = styled.button<ButtonVariants>`
       padding: 0;
       height: fit-content;
       
-      &:focus-visible {
+      &:focus-visible:enabled {
         color: #d6c6ae;
       }
       
-      &:hover {
+      &:hover:enabled {
         border-color: #fff;
       }
       
-      &:active {
+      &:active:enabled {
         color: #ac9d88;
       }
     `}
