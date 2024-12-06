@@ -1,4 +1,6 @@
-export type ImageProps = {
+import { ImgHTMLAttributes } from "react";
+
+export type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "src" | "alt"> & {
   src: string;
   alt: string;
 };
