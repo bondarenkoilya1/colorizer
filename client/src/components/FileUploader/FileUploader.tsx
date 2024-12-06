@@ -70,6 +70,7 @@ export const FileUploader = () => {
           accept="image/png, image/jpeg"
           onChange={handleFileChange}
         />
+
         <ButtonProcessStyled
           onClick={handleFileUpload}
           variant="secondary"

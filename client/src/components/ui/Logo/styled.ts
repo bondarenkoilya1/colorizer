@@ -1,18 +1,6 @@
 import { css } from "@emotion/react";
 
-import styled from "@emotion/styled";
-
-export const NavItemStyled = styled.li`
-  margin-right: 42px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-`;
-
-export const NavLinkStyles = css`
-  font-size: 26px;
-  text-transform: uppercase;
+export const LinkStyles = css`
   transition: all 0.3s ease-in-out;
   outline: 2px solid transparent;
   outline-offset: 12px;
@@ -29,10 +17,15 @@ export const NavLinkStyles = css`
   }
 
   &:hover {
-    color: #ecdfcc;
+    //  svg > path selects all of them, not just first
+    & svg path:first-child {
+      fill: #ecdfcc;
+    }
   }
 
   &:active {
-    color: #ac9d88;
+    & svg path:first-child {
+      color: #ac9d88;
+    }
   }
 `;
