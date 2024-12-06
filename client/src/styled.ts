@@ -9,10 +9,12 @@ import { connectFonts } from "./fonts";
 export const GlobalStyle = css`
   ${emotionReset}
   ${connectFonts}
+  ${scrollbarStyles()}
 
   html {
     box-sizing: border-box;
     background-color: #181c14;
+    scroll-behavior: smooth;
   }
 
   *,
@@ -24,7 +26,7 @@ export const GlobalStyle = css`
   }
 
   #root {
-    font-family: "Ro", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
     color: #fff;
     line-height: 120%;
   }
@@ -34,6 +36,27 @@ export const GlobalStyle = css`
     color: inherit;
   }
 `;
+
+// Declare with function declaration so I can call it above
+function scrollbarStyles() {
+  return css`
+    ::-webkit-scrollbar-track {
+      background: #ecdfcc;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar:horizontal {
+      display: none;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #697565;
+    }
+  `;
+}
 
 export const ContainerStyled = styled.div`
   max-width: 1410px;
