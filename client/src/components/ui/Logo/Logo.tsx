@@ -1,6 +1,10 @@
 import { FC } from "react";
 import { LogoProps } from "@types";
 import { Link } from "react-router-dom";
+import styled from "@emotion/styled";
+import { LinkStyles } from "./styled";
+
+const LinkStyled = styled(Link)(LinkStyles);
 
 // ClassName is here, so I can apply emotion styles for this component outside the file
 export const Logo: FC<LogoProps> = ({
@@ -10,7 +14,7 @@ export const Logo: FC<LogoProps> = ({
   className
 }) => {
   return (
-    <Link to={href} className={className}>
+    <LinkStyled to={href} className={className}>
       <svg
         width="234"
         height="117"
@@ -26,6 +30,6 @@ export const Logo: FC<LogoProps> = ({
           fill={subtitleColor}
         />
       </svg>
-    </Link>
+    </LinkStyled>
   );
 };
