@@ -12,7 +12,7 @@ import {
   ButtonProcessStyles,
   ErrorBlockStyles
 } from "./styled";
-import { Button, Error } from "../ui";
+import { Button, Error, Image } from "../ui";
 import styled from "@emotion/styled";
 // import { convertBytesToMegaBytes } from "@utils";
 
@@ -99,17 +99,7 @@ export const FileUploader = () => {
       {colorizedImage && (
         <div style={{ marginTop: "20px" }}>
           <h3 style={{ fontSize: "24px", marginBottom: "30px" }}>Your image:</h3>
-          <img
-            src={colorizedImage}
-            alt="Colorized image"
-            style={{
-              width: "400px",
-              height: "400px",
-              outline: "3px dashed #fff",
-              outlineOffset: "10px",
-              marginLeft: "10px"
-            }}
-          />
+          <Image src={colorizedImage} alt="Colorized image" />
         </div>
       )}
     </>
