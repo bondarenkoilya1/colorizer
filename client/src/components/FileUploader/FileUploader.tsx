@@ -1,18 +1,14 @@
 import { ChangeEvent, useState } from "react";
 import { UploadStatus } from "@types";
 import axios from "axios";
-import { GrUpload as UploadIcon } from "react-icons/gr";
 import { API_URL } from "@config";
 import {
   AdditionalTextStyled,
-  InputButtonStyled,
-  InputTextStyled,
-  InputUploadLabelStyled,
-  InputUploadStyled,
   ButtonProcessStyles,
-  ErrorBlockStyles
+  ErrorBlockStyles,
+  UploaderContainerStyled
 } from "./styled";
-import { Button, Error, Image } from "../ui";
+import { Button, Error, Image, Input } from "../ui";
 import styled from "@emotion/styled";
 // import { convertBytesToMegaBytes } from "@utils";
 
@@ -57,17 +53,11 @@ export const FileUploader = () => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
-        <InputUploadLabelStyled htmlFor="input-upload">
-          <InputTextStyled>Click and upload!</InputTextStyled>
-          <InputButtonStyled>
-            <UploadIcon size={20} color={"#000"} />
-          </InputButtonStyled>
-        </InputUploadLabelStyled>
-        <InputUploadStyled
-          id="input-upload"
-          type="file"
-          accept="image/png, image/jpeg"
+      <UploaderContainerStyled>
+        <Input
+          type="image-upload"
+          id="input-image-upload"
+          inputText="Click and upload!"
           onChange={handleFileChange}
         />
 
@@ -77,18 +67,9 @@ export const FileUploader = () => {
           disabled={status === "uploading"}>
           Colorize
         </ButtonProcessStyled>
-      </div>
+      </UploaderContainerStyled>
 
       <AdditionalTextStyled>* Less than 2MB. Support .jpg, .jpeg or .png</AdditionalTextStyled>
-
-      {/* TODO: Show later as a tooltip for image */}
-      {/*{file && (*/}
-      {/*  <ul>*/}
-      {/*    <li>File name: {file.name}</li>*/}
-      {/*    <li>File format: {file.type.slice(6)} </li>*/}
-      {/*    <li>File size: {convertBytesToMegaBytes(file.size)} MB</li>*/}
-      {/*  </ul>*/}
-      {/*)}*/}
 
       {status === "error" && (
         <ErrorBlockStyled
